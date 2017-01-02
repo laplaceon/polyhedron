@@ -33,6 +33,7 @@ func ListenAndServeZMQ() {
 	// zmqRouter.Bind("tcp://*:5555")
 
 	for {
+		// note: delimiter bytes aren't used in communications with a dealer
 		id, _ := zmqRouter.Recv(0)
 		zmqRouter.Recv(0)
 		message, _ := zmqRouter.Recv(0)
